@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='./sea.js'></script>
+    <style>
+        #hello{
+            width:200xp;
+            height: 200px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <div id='hello'></div>
+    <input type="button" id='btn' value="Click Me"/>
+    <script>
+        seajs.config({
+            alias:{
+                'jquery' : 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'
+            }
+        })
+        seajs.use(['./module3','./module4','jquery'],function(hello,world,$){
+             hello.sayHello();
+             world.sayWorld()
+            })
+    </script>
+</body>
+</html>
